@@ -1,5 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import NavBar from './Navbar'
+import { Link } from 'react-router-dom'
 
 const SignIn = () => {
     const [data, changeData]=useState([])
@@ -21,6 +23,7 @@ const SignIn = () => {
     }
   return (
     <div>
+        <NavBar/>
         <div className="container">
             <div className="row">
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
@@ -37,6 +40,7 @@ const SignIn = () => {
                         <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                             <button className="btn btn-success" onClick={readValue}>SignIn</button>
                         </div>
+                        <Link to="/signup">New User</Link>
                     </div>
                 </div>
             </div>
