@@ -6,6 +6,7 @@ import Payment from './components/Payment';
 import FrontPage from './components/FrontPage';
 import Cartfood from './components/Cartfood';
 import Add from './components/Add';
+import FoodViews from './components/FoodViews';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <FrontPage/>
       <Cartfood/>
       <Add/>
+      <FoodViews/>
     </div>
   );
 }
