@@ -5,6 +5,7 @@ import SignIn from './components/SignIn';
 import Payment from './components/Payment';
 import FrontPage from './components/FrontPage';
 import Cartfood from './components/Cartfood';
+import Add from './components/Add';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Payment/>
       <FrontPage/>
       <Cartfood/>
+      <Add/>
     </div>
   );
 }
