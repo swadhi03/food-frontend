@@ -7,17 +7,22 @@ import FrontPage from './components/FrontPage';
 import Cartfood from './components/Cartfood';
 import Add from './components/Add';
 import FoodViews from './components/FoodViews';
+import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div>
-      <FrontPage/>
-      <SignUp/>
-      <SignIn/>
-      <Payment/>
-      <Cartfood/>
-      <Add/>
-      <FoodViews/>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<FrontPage/>}/>
+          <Route path='/signup' element={<SignUp/>}/>
+          <Route path='/signin' element={<SignIn/>}/>
+          <Route path='/add' element={<Add/>}/>
+          <Route path='/cart' element={<Cartfood/>}/>          
+          <Route path='/payment' element={<Payment/>}/>          
+          <Route path='/viewfood' element={<FoodViews/>}/>                   
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

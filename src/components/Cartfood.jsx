@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import NavBar from './Navbar'
 
 const Cartfood = () => {
 
@@ -22,7 +23,7 @@ const Cartfood = () => {
 
   return (
     <div>
-
+      <NavBar/>
       <div className="container">
         <div className="row">
           <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
@@ -43,7 +44,7 @@ const Cartfood = () => {
                       <th scope="row">{index + 1}</th>
                       <td>{value.name}</td>
                       <td>{value.price}</td>
-                      <td>{value.no}</td>
+                      <td>1</td>
                     </tr>
 
                   }
@@ -51,11 +52,10 @@ const Cartfood = () => {
 
               </tbody>
             </table>
-
           </div>
         </div>
+        <a href="/payment" class="btn btn-primary">Buy Now</a>
       </div>
-
     </div>
   )
 }
