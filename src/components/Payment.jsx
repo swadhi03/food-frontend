@@ -39,7 +39,7 @@ const Payment = () => {
                                 <button type="submit" className="btn btn-primary">Pay Now</button>
                             </div>
                         </form>
-                        <link to="upi.jsx"> Through UPI </link>
+                        
                     </div>
                 </div>
             </div>
