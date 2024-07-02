@@ -7,9 +7,9 @@ import DashBoard from './components/DashBoard';
 function App() {
   return (
     <div>
-      <DashBoard/>
       <SignUp/>
       <SignIn/>
+      <DashBoard/>
     </div>
   );
 }
