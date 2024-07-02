@@ -34,7 +34,6 @@ useEffect(()=>{fetchData()},[])
       <th scope="col">name</th>
       <th scope="col">price</th>
       <th scope="col">no</th>
-      <th scope="col">image</th>
     </tr>
   </thead>
   <tbody>
@@ -45,7 +44,6 @@ useEffect(()=>{fetchData()},[])
    <td>{value.name}</td>
    <td>{value.price}</td>
    <td>{value.no}</td>
-   <td>{value.image}</td>
  </tr>
 
     }
