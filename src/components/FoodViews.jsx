@@ -20,6 +20,7 @@ const FoodViews = () => {
         <div>
             <div className="container">
                 <div className="row">
+                    <h2><center><b>Welcome to the Menu</b></center></h2>
                     <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                         <div className="row g-3">
                         {
@@ -32,7 +33,7 @@ const FoodViews = () => {
                                       <p class="card-text">Name:{value.name}</p>
                                       <p class="card-text">price:{value.price}</p>
                                       <p class="card-text">No's:{value.no}</p>
-                                      <a href="#" class="btn btn-primary">Buy Now</a>
+                                      <a href="/Cartfood" class="btn btn-primary">Buy Now</a>
                                     </div>
                                   </div>
                                 </div>

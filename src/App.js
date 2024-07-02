@@ -11,10 +11,10 @@ import FoodViews from './components/FoodViews';
 function App() {
   return (
     <div>
+      <FrontPage/>
       <SignUp/>
       <SignIn/>
       <Payment/>
-      <FrontPage/>
       <Cartfood/>
       <Add/>
       <FoodViews/>
