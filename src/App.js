@@ -3,6 +3,7 @@ import './App.css';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import Payment from './components/Payment';
+import FrontPage from './components/FrontPage';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <SignUp/>
       <SignIn/>
       <Payment/>
+      <FrontPage/>
     </div>
   );
 }
