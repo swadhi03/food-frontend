@@ -8,6 +8,7 @@ import Cartfood from './components/Cartfood';
 import Add from './components/Add';
 import FoodViews from './components/FoodViews';
 import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
+import DummyView from './components/DummyView';
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
           <Route path='/add' element={<Add/>}/>
           <Route path='/cart' element={<Cartfood/>}/>          
           <Route path='/payment' element={<Payment/>}/>          
-          <Route path='/viewfood' element={<FoodViews/>}/>                   
+          <Route path='/viewfood' element={<FoodViews/>}/>
+          <Route path='/dummyview' element={<DummyView/>}/>                   
         </Routes>
       </BrowserRouter>
     </div>
