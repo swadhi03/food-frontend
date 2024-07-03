@@ -2,13 +2,14 @@ import React from 'react'
 import NavBar from './Navbar'
 
 const Payment = () => {
+    
     return (
         <div>
-            <NavBar/>
             <div className="container">
                 <div className="row">
                     <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                         <h2><center><b>Payment Portal</b></center></h2>
+                        <div className="card">
                         <form className="row g-3">
                             <div className="col-md-6">
                                 <label for="inputEmail4" className="form-label">Card Number</label>
@@ -42,7 +43,7 @@ const Payment = () => {
                                 <button type="submit" className="btn btn-primary">Pay Now</button>
                             </div>
                         </form>
-                        
+                       </div> 
                     </div>
                 </div>
             </div>

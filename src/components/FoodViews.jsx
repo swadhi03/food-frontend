@@ -31,7 +31,7 @@ const FoodViews = () => {
                                 (value,index)=>{
                                     return <div className="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
                                     <div className="card">
-                                    <img src={value.image} className="card-img-top" alt="..."/>
+                                    <img src={value.image} height="250px" className="card-img-top" alt="..."/>
                                     <div className="card-body">
                                       <p className="card-text">Name:{value.name}</p>
                                       <p className="card-text">price:{value.price}</p>
