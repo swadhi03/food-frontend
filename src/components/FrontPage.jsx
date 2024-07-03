@@ -12,13 +12,13 @@ const FrontPage = () => {
         <div id="carouselExample" className="carousel slide">
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img src="https://media.istockphoto.com/id/1457979959/photo/snack-junk-fast-food-on-table-in-restaurant-soup-sauce-ornament-grill-hamburger-french-fries.webp?b=1&s=170667a&w=0&k=20&c=A_MdmsSdkTspk9Mum_bDVB2ko0RKoyjB7ZXQUnSOHl0=" class="d-block w-100" alt="..." />
+              <img src="https://urthfitness.com.au/carbon/wp-content/uploads/2016/07/Fri22_FridayFoodies-1200x600.jpg" class="d-block w-100" alt="..." />
             </div>
             <div className="carousel-item">
-              <img src="https://media.istockphoto.com/id/1457979959/photo/snack-junk-fast-food-on-table-in-restaurant-soup-sauce-ornament-grill-hamburger-french-fries.webp?b=1&s=170667a&w=0&k=20&c=A_MdmsSdkTspk9Mum_bDVB2ko0RKoyjB7ZXQUnSOHl0=" class="d-block w-100" alt="..." />
+              <img src="https://mms.businesswire.com/media/20220808005132/en/1536956/5/Benson-Hill-ADM-2C.jpg" class="d-block w-100" alt="..." />
             </div>
             <div className="carousel-item">
-              <img src="https://i0.wp.com/myenglishteacher.co.uk/wp-content/uploads/2023/01/pexels-photo-1092730.jpeg?resize=750%2C563&ssl=1" class="d-block w-100" alt="..." />
+              <img src="https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191101102722-vegan-diet-stock.jpg" class="d-block w-100" alt="..." />
             </div>
           </div>
           <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">

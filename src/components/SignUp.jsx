@@ -1,24 +1,32 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const SignUp = () => {
     const [data, changeData]=useState([])
     const inputHandler=(event)=>{
         changeData({...data, [event.target.name]:event.target.value})
     }
-    const readValue=(event)=>{
+    const readValue=()=>{
         console.log(data)
         axios.post("http://localhost:8088/signup",data).then(
             (response)=>{
                 console.log(response.data)
-                if (response.data.status==="success") {
+                if (response.data.status==="success") 
+                    {
                     alert("User signedup successfully")
-                } else {
+                    } 
+                else 
+                {
                     alert("User didnot signedup ")
                 }
             }
-        ).catch()
+        ).catch(
+            (error)=>{
+                console.log(error.message)
+                alert(error.message)
+            }
+        ).finally()
     }
   return (
     <div>
