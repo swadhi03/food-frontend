@@ -1,63 +1,101 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import NavBar from './Navbar'
+import React, { useState } from 'react'
+import Navbar from './Navbar'
+import { Link } from 'react-router-dom'
 
-const Cartfood = () => {
 
-  const [data, changeData] = useState([])
-  const fetchData = () => {
-    axios.post("http://localhost:8088/Cart", data).then(
-
-      (response) => {
-
-        console.log(response.data)
-        changeData(response.data)
-      }
-
-    ).catch().finally()
-
+const CartFood = () => {
+  const [data, changeData] = useState(
+    {
+      "username": ""
+    }
+  )
+  const [result, changeResult] = useState([])
+  const inputHandler = (event) => {
+    changeData({ ...data, [event.target.name]: event.target.value })
   }
 
-  useEffect(() => { fetchData() }, [])
+  const deleteBus = (id) => {
+    let input = { "_id": id }
+    axios.post("", input).then(
+      (response) => {
+        console.log(response.data)
+        if (response.data.status == "success") {
+          alert("Deleted Successfully")
+        }
+        else {
+          alert("Failed")
+        }
+      }
+    ).catch().finally()
+  }
 
 
+  const readValue = () => {
+    console.log(data)
+    axios.post("", data).then(
+      (response) => {
+        console.log(response.data)
+        changeResult(response.data)
+      }
+    ).catch(
+      (error) => {
+        alert(error)
+      }
+    ).finally()
+  }
   return (
     <div>
-      <NavBar/>
       <div className="container">
+        <Navbar />
         <div className="row">
           <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-          <h2><center><b>Let's See What we have choose</b></center></h2>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">index</th>
-                  <th scope="col">name</th>
-                  <th scope="col">price</th>
-                  <th scope="col">no</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.map(
-                  (value, index) => {
-                    return <tr>
-                      <th scope="row">{index + 1}</th>
-                      <td>{value.name}</td>
-                      <td>{value.price}</td>
-                      <td>1</td>
+            <div className="row g-3">
+              <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <label htmlFor="" className="form-label">User Name</label>
+                <input type="text" className="form-control" name='username' value={data.username} onChange={inputHandler} />
+              </div>
+              <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <button className="btn btn-success" onClick={readValue}>Search</button>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Index</th>
+                      <th scope="col">User Name</th>
+                      <th scope="col">Product Name</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Nos</th>
                     </tr>
-
-                  }
-                )}
-
-              </tbody>
-            </table>
+                  </thead>
+                  <tbody>
+                    {result.map(
+                      (value, index) => {
+                        return <tr>
+                          <th scope="row">{index}</th>
+                          <td>{value.username}</td>
+                          <td>{value.name}</td>
+                          <td>{value.price}</td>
+                          <td>{value.no}</td>
+                          <td>
+                            <button className="btn btn-danger" onClick={() => { deleteBus(value._id) }}>Delete</button>
+                          </td>
+                        </tr>
+                      }
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
-        <a href="/payment" class="btn btn-primary">Buy Now</a>
+        <Link to="/payment" className="btn btn-primary">Buy Now</Link>
       </div>
     </div>
   )
 }
 
-export default Cartfood
+export default CartFood

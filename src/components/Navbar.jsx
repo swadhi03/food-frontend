@@ -15,7 +15,7 @@ const NavBar = () => {
                                 <a class="nav-link active" aria-current="page" href="/viewfood">Food</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#"></a>
+                                <a class="nav-link active" aria-current="page" href="/cart">More to Add</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="#"></a>
