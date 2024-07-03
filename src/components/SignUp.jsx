@@ -1,19 +1,18 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import NavBar from './Navbar'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const SignUp = () => {
     const [data, changeData]=useState([])
     const inputHandler=(event)=>{
         changeData({...data, [event.target.name]:event.target.value})
     }
-    const readValue=()=>{
+    const readValue=(event)=>{
         console.log(data)
         axios.post("http://localhost:8088/signup",data).then(
             (response)=>{
                 console.log(response.data)
-                if (response.data.status=="success") {
+                if (response.data.status==="success") {
                     alert("User signedup successfully")
                 } else {
                     alert("User didnot signedup ")
@@ -23,7 +22,6 @@ const SignUp = () => {
     }
   return (
     <div>
-        <NavBar/>
         <div className="container">
             <div className="row">
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">

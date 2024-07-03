@@ -36,7 +36,7 @@ const FoodViews = () => {
                                       <p className="card-text">Name:{value.name}</p>
                                       <p className="card-text">price:{value.price}</p>
                                       <p className="card-text">No's:{value.no}</p>
-                                      <Link to="/cart" className="btn btn-primary">Buy Now</Link>
+                                      <Link to="/payment" className="btn btn-primary">Buy Now</Link>
                                     </div>
                                   </div>
                                 </div>
