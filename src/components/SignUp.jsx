@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const SignUp = () => {
     const [data, changeData]=useState([])
@@ -11,13 +12,21 @@ const SignUp = () => {
         axios.post("http://localhost:8088/signup",data).then(
             (response)=>{
                 console.log(response.data)
-                if (response.data.status=="success") {
+                if (response.data.status==="success") 
+                    {
                     alert("User signedup successfully")
-                } else {
+                    } 
+                else 
+                {
                     alert("User didnot signedup ")
                 }
             }
-        ).catch()
+        ).catch(
+            (error)=>{
+                console.log(error.message)
+                alert(error.message)
+            }
+        ).finally()
     }
   return (
     <div>
@@ -25,6 +34,7 @@ const SignUp = () => {
             <div className="row">
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <div className="row g-3">
+                        <h2><center><b>Lets's SignUp</b></center></h2>
                         <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                             <label htmlFor="" className="form-label">Name:</label>
                             <input type="text" className="form-control" name="name" value={data.name} onChange={inputHandler} />
@@ -69,6 +79,7 @@ const SignUp = () => {
                         <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                             <button className="btn btn-success" onClick={readValue}>SignUp</button>
                         </div>
+                        <Link to="/signin">Existing User</Link>
                     </div>
                 </div>
             </div>

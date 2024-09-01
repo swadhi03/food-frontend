@@ -3,13 +3,26 @@ import './App.css';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import Payment from './components/Payment';
+import FrontPage from './components/FrontPage';
+import Cartfood from './components/Cartfood';
+import Add from './components/Add';
+import FoodViews from './components/FoodViews';
+import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div>
-      <SignUp/>
-      <SignIn/>
-      <Payment/>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<SignUp/>}/>
+          <Route path='/dashboard' element={<FrontPage/>}/>
+          <Route path='/signin' element={<SignIn/>}/>
+          <Route path='/add' element={<Add/>}/>
+          <Route path='/cart' element={<Cartfood/>}/>          
+          <Route path='/payment' element={<Payment/>}/>          
+          <Route path='/viewfood' element={<FoodViews/>}/>                   
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
